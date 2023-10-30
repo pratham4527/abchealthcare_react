@@ -1,24 +1,45 @@
-import logo from './logo.svg';
-import './App.css';
+// import './App.css';
+import Addproducts from './components/Addproducts';
+import Allmedicines from './components/Allmedicines';
+import Allorders from './components/Allorders';
+import Allusers from './components/Allusers';
+import Cart from './components/Cart';
+import Login from './components/Login';
+import Medicines from './components/Medicines';
+import Order from './components/Order';
+// import Navbar from './components/Navbar';
+import Register from './components/Register';
+// import store from './store';
+// import { Provider } from 'react-redux';
+
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+
+      <BrowserRouter>
+            <Routes>
+          
+                <Route index element={<Medicines />} />
+                
+                <Route path="register" element={<Register />} />
+                <Route path="login" element={<Login />} />
+                <Route path="cart" element={<Cart/>} />
+                <Route path="order" element={<Order/>} />
+                <Route path="admin/addproducts" element={<Addproducts/>} />
+                <Route path="admin/orders" element={<Allorders/>} />
+                <Route path="admin/users" element={<Allusers/>} />
+                <Route path="admin/medicines" element={<Allmedicines/>} />
+
+           
+            </Routes>
+          </BrowserRouter>
+
+
+
+    </>
   );
 }
 
